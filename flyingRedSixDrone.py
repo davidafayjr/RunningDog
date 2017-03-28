@@ -56,7 +56,7 @@ except KeyboardInterrupt:
 
 	mydatabase.put("/GeoFire/Red six", 'l', {"0": intial_lat, "1": intial_lng})
 			
-except requests.exceptions.ConnectionError:
+except ConnectionError:
 
 	mydatabase.put("/GeoFire/Red five", 'l', {"0": intial_lat, "1": intial_lng})
 	
