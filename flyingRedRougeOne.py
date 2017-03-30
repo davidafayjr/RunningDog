@@ -22,7 +22,7 @@ def runLeg(start_lat, start_lng, stop_lat, stop_lng, number_of_steps):
 	for index in indexes:
 		each_lat = each_lat + lat_step
 		each_lng = each_lng + lng_step
-		#print(each_lat, each_lng)
+		print("Rouge One [%s, %s]" % (each_lat, each_lng))
 		lat = each_lat 
 		lng = each_lng
 		#mydatabase.put("/location/", 'testuser', {"lat": lat, "lng": lng})
