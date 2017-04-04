@@ -29,6 +29,10 @@ def createSteps(a, b, number_of_steps):
 	return step
 
 def runLeg(start_lat, start_lng, stop_lat, stop_lng, number_of_steps):
+	'''
+	simulate movement between to locaions and transmit the locations to firebase
+	call isThisPointInANoFlyZone(lat, lng) to check it the location is in a no-fly zone
+	''' 
 
 	lat_step = createSteps(start_lat, stop_lat, number_of_steps)
 	lng_step = createSteps(start_lng, stop_lng, number_of_steps)
@@ -62,7 +66,10 @@ def runLeg(start_lat, start_lng, stop_lat, stop_lng, number_of_steps):
 			sleep(.01)
 
 def isThisPointInANoFlyZone(lat, lng):
-
+	'''
+	compare the current lat/lng to the NoFlyZones from firebase database
+	if in a no-fly zone return false 
+	'''
 
 
 	allNoFlyZones = mydatabase.child("NoFlyZones").get()
@@ -83,6 +90,11 @@ def isThisPointInANoFlyZone(lat, lng):
 
 
 def pointInsidePolygon(polygon_list, lat, lng):
+	'''
+	helper function for isThisPointInANoFlyZone(lat, lng)
+	cast a line from the curren point and counts how many of the 
+	edges of the polygon it intersects with lineIntersect() function
+	'''
  
 	inside = False
 	next_index = 0
@@ -97,6 +109,9 @@ def pointInsidePolygon(polygon_list, lat, lng):
 	return inside
 
 def lineIntersect(inside, x, y, p1_x, p1_y, p2_x, p2_y):
+	'''
+	helper function for pointInsidePolygon()
+	'''
 	
 	if y > min(p1_y, p2_y):
 		if y <= max(p1_y, p2_y):
