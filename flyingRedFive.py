@@ -29,6 +29,31 @@ def runLeg(start_lat, start_lng, stop_lat, stop_lng, number_of_steps):
 		mydatabase.put("/GeoFire/Red five", 'l', {"0": lat, "1": lng})
 		sleep(.01)
 
+def pointInsidePolygon(polygon_list, lat, lng):
+ 
+	inside = false
+	next_index = 0
+
+	for current_point in polygon_list
+		next_index=(next_index+1) % len(polygon_list)
+		(p1_lng, p1_lat, p1_alt) = current_point.split(",")
+		(p2_lng, p2_lat, p2_alt) = polygon_list[next_index].split(",")
+		inside = lineIntersect(inside, float(lng), float(lat), float(p1_lng), float(p1_lat), float(p2_lng), float(p2_lat))
+	
+	return inside
+
+def lineIntersect(inside, x, y, p1_x, p1_y, p2_x, p2_y):
+	
+	if y > min(p1_y, p2_y)
+		if y <= max(p1_y, p2_y)
+			if x <= max(p1_x, p2_x)
+				if p1_y != p2_y
+				xinters = (y-p1_y) * (p2_x-p1_x)/(p2_y - p1_y) + p1_x
+					if p1_x==p2_x or x<=xinters
+					inside = not inside
+	
+	return inside
+
 if __name__ == "__main__":
 
 	
