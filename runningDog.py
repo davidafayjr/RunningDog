@@ -25,15 +25,15 @@ def runLeg(start_lat, start_lng, stop_lat, stop_lng, number_of_steps):
 		print(each_lat, each_lng)
 		lat = each_lat 
 		lng = each_lng
-		mydatabase.put("/location/", 'testuser', {"lat": lat, "lng": lng})
+		mydatabase.put("/", 'dog', {"lat": lat, "lng": lng})
 		#mydatabase.put("/GeoFire/Red three", 'l', {"0": lat, "1": lng})
 		sleep(.01)
 
 if __name__ == "__main__":
 
 	
-	intial_lat = mydatabase.get("/location/testuser/", "lat")
-	intial_lng = mydatabase.get("/location/testuser/", "lng")
+	intial_lat = mydatabase.get("/dog/", "lat")
+	intial_lng = mydatabase.get("/dog/", "lng")
 
 	lat_a = 39.701464
 	lng_a = -83.743603
@@ -57,5 +57,5 @@ if __name__ == "__main__":
 		
 	except KeyboardInterrupt:
 
-		mydatabase.put("/location/", 'testuser', {"lat": intial_lat, "lng": intial_lng})
+		mydatabase.put("/", 'dog', {"lat": intial_lat, "lng": intial_lng})
 	
