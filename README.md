@@ -18,3 +18,13 @@ this demonstrates the differnce between animated movement in our app and just si
 ## Running runningDog.py
 1.  in linux shell 
 	python runningDog.py
+
+
+## Group 17 Code links
+https://github.com/davidafayjr/mapboxprototyping
+https://github.com/davidafayjr/RunningDog
+https://github.com/davidafayjr/droneSimulator
+https://github.com/davidafayjr/firebasewebsocket
+https://github.com/davidafayjr/easywsclient
+https://github.com/davidafayjr/cfcts_sketch
+https://github.com/GSBhub/cfcts_sketch
